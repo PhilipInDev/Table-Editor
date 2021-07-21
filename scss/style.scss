@@ -1,0 +1,290 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$menuIconsColorHov: rgb(0, 31, 99);
+$menuIconsOpacityHov: 0.7;
+$headerButColor: rgb(103, 138, 212);
+
+.wrapper {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding-top: 40px;
+  height: 100%;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.lock-budy{
+  overflow: hidden;
+  position: relative;
+  &::before{
+    position: absolute;
+    z-index: 100;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.349);
+  }
+}
+.header {
+  display: flex;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  min-width: 100vw;
+  height: 60px;
+  padding-right: 20px;
+  background-color: rgb(73, 116, 211);
+  
+
+		&__menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      
+      li{
+        height: 100%;
+        max-width: 140px;
+        flex: 0 1 20%;
+        margin-left: 3px;
+      }
+
+		}
+    &__logo{
+      padding: 10px 20px 10px 2.5vw;
+      flex: 0 1 25%;
+      font-size: 35px;
+      color: whitesmoke;
+    }
+		&__link {
+      cursor: pointer;
+      text-align: center;
+      background-color: $headerButColor;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+      
+      &:hover{
+        opacity: $menuIconsOpacityHov;
+        i{
+          color: $menuIconsColorHov;
+          
+        }
+      }
+      @include flexCenter;
+		}
+}
+.side-bar {
+  width: 75px;
+  min-width: 75px;
+  flex-grow: 1;
+  background-color: rgb(156, 181, 235);
+  padding: 30px 5px;
+		&__menu {
+      width: 100%;
+      height: 100%;
+      li{
+        margin-bottom: 5px;
+      }
+		}
+
+		&__link {
+      position: relative;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 30px;
+      background-color: rgb(45, 88, 180);
+      font-size: 20px;
+      &:hover{
+        opacity: $menuIconsOpacityHov;
+        i{
+          color: $menuIconsColorHov;
+          
+        }
+      }
+      @include flexCenter;
+  		}
+}
+.fas,
+.far{
+  color: rgb(210, 220, 240);
+}
+.content {
+  width: 100%;
+  padding: 20px;
+  padding-right: 50px;
+  text-align: right;
+}
+.upload{
+  cursor: pointer;
+  color: rgb(149, 236, 149);
+  font-size: 30px;
+  align-self: center;
+  
+}
+.upload-button-box{
+  @include flexCenter();
+  padding: 0 12px;
+}
+
+
+.drop-area {
+  position: relative;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(176, 226, 255, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+
+  &__text {
+  }
+}
+
+.my-form {
+}
+
+.dnd-csv-icon{
+  font-size: 105px;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -40px;
+}
+.button {
+  padding: 3px 5px;
+  background-color: rgb(103, 138, 212);
+  border: 1px solid $menuIconsColorHov;
+  cursor: pointer;
+  &:hover{
+    opacity: $menuIconsOpacityHov;
+  }
+}
+.file-input{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+}
+.highlight{
+  border: 3px dashed rgb(124, 219, 100);
+  background-color: rgba(179, 255, 176, 0.24);
+}
+
+.open-upload{
+  height: 300px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border: 3px dashed $menuIconsColorHov;
+  opacity: 1;
+  visibility: visible;
+}
+.menu-controlers-clicked{
+  box-shadow: -3px -2px 5px 2px rgba(34, 60, 80, 0.75) inset;
+}
+

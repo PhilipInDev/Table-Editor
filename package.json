@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "jszip": "^3.6.0",
+    "requirejs": "^2.3.6"
+  },
+  "name": "CSV_EDITOR",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {
+    "contenteditable-max-length": "^1.0.0"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
