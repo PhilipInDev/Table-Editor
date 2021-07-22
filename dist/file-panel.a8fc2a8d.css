@@ -1,0 +1,378 @@
+button {
+  border: none;
+  padding: 0px 5px;
+}
+
+.file-panel-open-button-box {
+  margin-left: 10px;
+  padding: 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.file-panel-open-button {
+  color: #888888;
+  font-size: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.open-file-menu-button-active {
+  cursor: pointer;
+  color: #f09c00;
+}
+
+.file-panel {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  position: relative;
+}
+
+.file-panel__file-box {
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 0px;
+  max-width: 82.5vw;
+  visibility: hidden;
+  border-bottom: 1px solid transparent;
+}
+
+.file-panel__file-box > * {
+  margin-left: 10px;
+}
+
+.file-panel__icon {
+  font-size: 17px;
+  margin-left: 0px;
+  color: #000097;
+}
+
+.file-panel__file-name {
+  height: 100%;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  max-width: 50%;
+  width: 33%;
+  padding: 0 3px;
+  background: white;
+  background: -webkit-gradient(linear, left top, right top, color-stop(21%, white), color-stop(81%, #b9c6f9), color-stop(95%, #4f78d9), to(#4a4a86));
+  background: linear-gradient(90deg, white 21%, #b9c6f9 81%, #4f78d9 95%, #4a4a86 100%);
+  line-height: 50px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: 0;
+}
+
+.file-panel__file-name:focus {
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  width: 50%;
+  display: inline-block;
+}
+
+.file-panel__file-type {
+  padding-left: 10px;
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.file-panel__file-type::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 15px;
+  width: 1px;
+  margin-top: -7.5px;
+  background-color: blue;
+}
+
+.file-panel__file-size {
+  padding-left: 5px;
+  display: block;
+  position: relative;
+  width: 82px;
+}
+
+.file-panel__file-size::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 15px;
+  width: 1px;
+  margin-top: -7.5px;
+  background-color: blue;
+}
+
+.file-panel__save-file-as {
+  border-radius: 15px;
+  height: 25px;
+  font-size: 12px;
+  background-color: #0303b6;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.file-panel__save-file-as:hover {
+  -webkit-box-shadow: 1px 3px 2px #292929;
+          box-shadow: 1px 3px 2px #292929;
+  background-color: blue;
+}
+
+.file-panel__save-file-as:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.file-panel__download-file {
+  background-color: #149714;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  display: block;
+  border-radius: 15px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.file-panel__download-file:hover {
+  -webkit-box-shadow: 1px 3px 2px #292929;
+          box-shadow: 1px 3px 2px #292929;
+  background-color: #09ce09;
+}
+
+.file-panel__download-file:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.file-panel__open-file {
+  background-color: #0298ac;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  border-radius: 15px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.file-panel__open-file:hover {
+  -webkit-box-shadow: 1px 3px 2px #292929;
+          box-shadow: 1px 3px 2px #292929;
+  background-color: #00c0da;
+}
+
+.file-panel__open-file:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.file-panel__buttons-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+}
+
+.file-panel__buttons-box > * {
+  margin-left: 10px;
+}
+
+.file-panel__delete-all {
+  background-color: #af0202;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.file-panel__delete-all:hover {
+  -webkit-box-shadow: 1px 3px 2px #292929;
+          box-shadow: 1px 3px 2px #292929;
+  background-color: red;
+}
+
+.file-panel__delete-all:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.file-panel__download-all {
+  background-color: #149714;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.file-panel__download-all:hover {
+  -webkit-box-shadow: 1px 3px 2px #292929;
+          box-shadow: 1px 3px 2px #292929;
+  background-color: #09ce09;
+}
+
+.file-panel__download-all:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.file-panel__empty-caution {
+  text-align: center;
+  font-size: 0px;
+  font-weight: 700;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.save-as {
+  position: absolute;
+  z-index: 101;
+  top: 50%;
+  margin-top: -200px;
+  left: 50%;
+  margin-left: -225px;
+  min-width: 450px;
+  min-height: 200px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.save-as__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 120px;
+  height: 140px;
+  padding: 3px;
+  cursor: pointer;
+  background-color: #85b2d8;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.save-as__option:hover {
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 2px 2px 3px 2px #646464;
+          box-shadow: 2px 2px 3px 2px #646464;
+}
+
+.save-as__option:hover p {
+  color: #6989b5;
+}
+
+.save-as__pre-text {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6989b5;
+}
+
+.save-as__text {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ebebeb;
+}
+
+.open-disp-flex-op-vis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.in-progress {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.open-fp-empty-caution {
+  opacity: 1;
+  visibility: visible;
+  font-size: 30px;
+}
+
+[contenteditable="true"].file-panel__file-name br {
+  display: none;
+}
+
+.fa-trash-alt {
+  font-size: 17px;
+  width: 15px;
+  height: 15px;
+  color: red;
+  cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+  color: #960000;
+}
+
+.open-file-panel {
+  opacity: 1;
+  margin-bottom: 20px;
+  padding-bottom: 60px;
+  visibility: visible;
+}
+
+.open-file-box {
+  opacity: 1;
+  height: 50px;
+  width: 82.5vw;
+  border-bottom: 1px solid blue;
+  visibility: visible;
+}
+
+
+/*# sourceMappingURL=/file-panel.a8fc2a8d.css.map */
